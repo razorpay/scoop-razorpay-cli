@@ -1,6 +1,6 @@
 {
   "version": "1.0.8",
-  "description": "Official CLI for the Razorpay API",
+  "description": "Official Razorpay CLI.",
   "homepage": "https://github.com/razorpay/razorpay-cli",
   "license": "MIT",
   "architecture": {
