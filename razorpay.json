@@ -1,0 +1,31 @@
+{
+  "version": "1.0.8",
+  "description": "Official CLI for the Razorpay API",
+  "homepage": "https://github.com/razorpay/razorpay-cli",
+  "license": "MIT",
+  "architecture": {
+    "64bit": {
+      "url": "https://razorpay.com/cli/latest/razorpay_windows_x86_64.zip",
+      "hash": "42279dffcff7a8d65cc2adee6bd25adb04384b3468c4e73a38f7baffb9753c6e"
+    },
+    "32bit": {
+      "url": "https://razorpay.com/cli/latest/razorpay_windows_i386.zip",
+      "hash": "8159eadd7550cef77430c995e6c9772abc9e056308dbb9f468d1d5da22bafe2f"
+    }
+  },
+  "bin": "razorpay.exe",
+  "checkver": {
+    "url": "https://razorpay.com/cli/latest",
+    "regex": "v([\\d.]+)"
+  },
+  "autoupdate": {
+    "architecture": {
+      "64bit": {
+        "url": "https://razorpay.com/cli/latest/razorpay_windows_x86_64.zip"
+      },
+      "32bit": {
+        "url": "https://razorpay.com/cli/latest/razorpay_windows_i386.zip"
+      }
+    }
+  }
+}
