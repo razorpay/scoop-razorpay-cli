@@ -6,16 +6,16 @@
   "architecture": {
     "64bit": {
       "url": "https://razorpay.com/cli/latest/razorpay_windows_x86_64.zip",
-      "hash": "93f8eacd0c67bd6a3f4a12cb470fdc931f39f6235ba26ca3c8d9e021fe247b78"
+      "hash": "db93782e9fea80952d3900a22aecd6a3269792c101dedc0e5aa7294116c6e1eb"
     },
     "32bit": {
       "url": "https://razorpay.com/cli/latest/razorpay_windows_i386.zip",
-      "hash": "a6341b641df344aab0cf7e0ad5bc8a8c708f24d3c5559462a715fa7453500d8d"
+      "hash": "7cabb3551ede8d83ed731c31d20b62e63119e39cd1ee3b7a28730753c968a5db"
     }
   },
   "bin": "razorpay.exe",
   "checkver": {
-    "url": "https://razorpay.com/cli/latest",
+    "url": "https://razorpay.com/cli/latest/version",
     "regex": "v([\\d.]+)"
   },
   "autoupdate": {
