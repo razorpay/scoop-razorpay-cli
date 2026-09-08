@@ -1,0 +1,37 @@
+service: scoop-razorpay-cli  # required, canonical slug — immutable once registered
+displayName: "Scoop Bucket for Razorpay CLI"  # required, human-readable name — README H1 "# Scoop Bucket for Razorpay CLI"
+description: "Official Scoop bucket (Windows package manifest) for the Razorpay CLI, letting Windows developers install and update the `razorpay` binary via `scoop install razorpay/razorpay`."  # required, one-sentence description — README installation section; the repo holds a single razorpay.json manifest alongside the README
+type: library  # required, one of: service | worker | cron | library | pipeline — a two-file package-manager manifest repo (README.md + razorpay.json) fed by the razorpay-cli release workflow; nothing runs anywhere · retype after the serviceTypes enum widens: tool
+tier: T3  # required, one of: T0 | T1 | T2 | T3 — a packaging/distribution shim for the CLI (whose own manifest, razorpay-cli, carries the T2 rating for the shipped artifact); the bucket itself is a pointer file, so T3 — a stale manifest is an inconvenience, not an outage
+lifecycle: live  # optional — current and referenced by the razorpay-cli release automation (the merged razorpay-cli manifest names this repo as the CLI's Scoop bucket); last push 2026-07-15 is normal cadence for a manifest bumped per release
+
+domain: razorpay1/developer-experience  # required, two-level domain/subgroup slug — family razorpay1 from cache/miss_seed.json l1 (BU "SME Payments"); area reuses the razorpay1/developer-experience slug already created for the merged razorpay-cli manifest, keeping the CLI and its distribution bucket together
+
+owner:
+  team:  # required, owning team slug — TO FILL: this repo has no CODEOWNERS file, .github/repo_owners.json carries no team slug, and the GitHub repository-teams API is not readable with the current token; ask the POD lead for the owning GitHub team
+  em:  # name | @slack | email — TO FILL: DevRev runnable owner not found in SuccessFactors
+  org_group:  # SuccessFactors group of the EM — TO FILL: the declared owner has no SuccessFactors record, so the org tree cannot be resolved; ask the POD lead
+  org_sub_group:  # SuccessFactors sub-group of the EM — TO FILL: the declared owner has no SuccessFactors record; ask the POD lead
+  org_pod:  # SuccessFactors pod of the EM — TO FILL: the declared owner has no SuccessFactors record; ask the POD lead
+  pm:  # product manager — TO FILL: not derived on purpose; ask the razorpay-cli owners
+  overrides: []  # optional, region-scoped owner overrides — TO FILL only if some region is owned by a different team; each entry is a "region" code plus the owning "team" slug
+
+links:
+  repo: "https://github.com/razorpay/scoop-razorpay-cli"  # canonical GitHub repo URL
+  alerts_repo:  # this service's alert rules in razorpay/alert-rules — TO FILL: no matching ruleset found; add one in razorpay/alert-rules, then link the file here
+  slos:  # SLO definitions — TO FILL: no slo.yaml at this repo root and no sloth ruleset for it under razorpay/alert-rules/slo/prod (the two places SLOs are defined today); add one there and link it here
+  slack_channel:  # primary Slack channel — TO FILL: no slack_candidates in the draft; the owning discussion happens wherever razorpay-cli is discussed — ask the razorpay-cli owners
+  zenduty_policy:  # Zenduty policy/service name used for paging — TO FILL: the service-to-policy mapping is not in DevRev or alert-rules for this service; it lives in the external Zenduty policies sheet
+  escalation_l1:  # service EM — TO FILL: no owner could be resolved for this service
+  escalation_l2:  # EM's manager — TO FILL: the EM has no SuccessFactors record, so no manager chain is available
+  escalation_l3:  # manager's manager — TO FILL: the EM has no SuccessFactors record, so no manager chain is available
+  oncall_handle:  # Slack/PagerDuty oncall handle or usergroup — TO FILL: not set on the DevRev runnable
+  runbook:  # link to the incident runbook — TO FILL: no runbook directory for this service in razorpay/rzp-oncall-agent; add one or link the Google Doc / alpha.razorpay.com page
+  api_docs:  # API documentation — TO FILL: no swagger/openapi/proto found in the repo tree; link the API spec or Postman collection
+  dashboard:  # primary dashboard — TO FILL: not applicable for a package manifest; no Grafana hit exists
+  logs_and_traces: "https://razorpay-prod.app.coralogix.in/#/query-new/archive-logs"  # org-standard prod Coralogix — filter subsystem "scoop-razorpay-cli"
+  strategy_okr:  # TO FILL: link the FY strategy doc for the owning group.
+  risk_assessment:  # TO FILL: no .agents/skills/risk-assessment in this repo; add the per-repo risk-assessment skill
+  regions:  # per-region links — TO FILL: no prod region deployment found for this service in spinacode or alert-rules; add a block per geography once it ships
+
+dependencies: []  # optional, declared service dependencies — TO FILL: shape: - service: <slug> for internal deps, - vendor: <name> for external (gateways, banks)
